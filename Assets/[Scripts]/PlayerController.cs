@@ -9,7 +9,8 @@ public class PlayerController : MonoBehaviour
     public BulletManager bulletManager;
 
     [Header("Boundary Check")]
-    public float horizontalBoundary;
+    // public float horizontalBoundary;
+    public float VerticleBoundary;
 
     [Header("Player Speed")]
     public float horizontalSpeed;
@@ -56,13 +57,13 @@ public class PlayerController : MonoBehaviour
         {
             var worldTouch = Camera.main.ScreenToWorldPoint(touch.position);
 
-            if (worldTouch.x > transform.position.x)
+            if (worldTouch.y > transform.position.y)
             {
                 // direction is positive
                 direction = 1.0f;
             }
 
-            if (worldTouch.x < transform.position.x)
+            if (worldTouch.y < transform.position.y)
             {
                 // direction is negative
                 direction = -1.0f;
@@ -85,9 +86,12 @@ public class PlayerController : MonoBehaviour
             direction = -1.0f;
         }
 
-        if (m_touchesEnded.x != 0.0f)
+        /*Touch input*/
+        // Modified from movement on x-axis to y-axis
+        if (m_touchesEnded.y != 0.0f)
         {
-           transform.position = new Vector2(Mathf.Lerp(transform.position.x, m_touchesEnded.x, horizontalTValue), transform.position.y);
+           // transform.position = new Vector2(Mathf.Lerp(transform.position.x, m_touchesEnded.x, horizontalTValue), transform.position.y);
+           transform.position = new Vector2(transform.position.x, Mathf.Lerp(transform.position.y, m_touchesEnded.y, horizontalTValue));
         }
         else
         {
@@ -97,18 +101,19 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    // Changed CheckBounds to check boundaries on Y-axis
     private void _CheckBounds()
     {
         // check right bounds
-        if (transform.position.x >= horizontalBoundary)
+        if (transform.position.y >= VerticleBoundary)
         {
-            transform.position = new Vector3(horizontalBoundary, transform.position.y, 0.0f);
+            transform.position = new Vector3(transform.position.x, VerticleBoundary, 0.0f);
         }
 
         // check left bounds
-        if (transform.position.x <= -horizontalBoundary)
+        if (transform.position.y <= -VerticleBoundary)
         {
-            transform.position = new Vector3(-horizontalBoundary, transform.position.y, 0.0f);
+            transform.position = new Vector3(transform.position.x, -VerticleBoundary, 0.0f);
         }
 
     }
