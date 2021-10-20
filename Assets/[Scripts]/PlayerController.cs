@@ -1,4 +1,14 @@
-﻿using System.Collections;
+﻿/*
+ Name               :   Hancong Zhang
+ Student ID         :   101234068
+ File               :   PlayerController.cs
+ Description        :   This is the Player Controller script
+ Date Modified      :   Oct 20, 2021
+ Revision History   :   - Adding new variable and changing the player movement from
+                        Verticle to Horizontal, set movement boundaries on Y-axis
+ */
+
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using UnityEditor;
