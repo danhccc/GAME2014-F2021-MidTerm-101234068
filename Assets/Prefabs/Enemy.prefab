@@ -46,6 +46,7 @@ SpriteRenderer:
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
@@ -117,8 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ae924e2913b5bc44fbb3383f344722e7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  horizontalSpeed: 2
-  horizontalBoundary: 2.1
+  VerticalSpeed: 1
+  VerticalBoundary: 2
   direction: 1
 --- !u!61 &5207501529346661145
 BoxCollider2D:

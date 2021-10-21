@@ -33,6 +33,7 @@ public class BulletController : MonoBehaviour, IApplyDamage
         _CheckBounds();
     }
 
+    // Changed the bullet to travel in horizontal direction (Left to right)
     private void _Move()
     {
         // transform.position += new Vector3(0.0f, verticalSpeed, 0.0f) * Time.deltaTime;

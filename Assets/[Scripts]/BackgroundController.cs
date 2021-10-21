@@ -14,8 +14,8 @@ using UnityEngine;
 public class BackgroundController : MonoBehaviour
 {
     // public float verticalSpeed;
-    public float HorizontalSpeed;
     // public float verticalBoundary;
+    public float HorizontalSpeed;
     public float HorizontalBoundary;
 
     // Update is called once per frame
@@ -31,6 +31,7 @@ public class BackgroundController : MonoBehaviour
         transform.position = new Vector3(HorizontalBoundary, 0.0f);
     }
 
+    // Make background move in horizontal direction (right to left)
     private void _Move()
     {
         // transform.position -= new Vector3(0.0f, verticalSpeed) * Time.deltaTime;
